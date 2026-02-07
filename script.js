@@ -207,6 +207,13 @@ document.addEventListener('keydown', function (event) {
  * @param {String} projectId - The project ID (e.g., 'project-1')
  */
 function toggleProjectBreakdown(event, projectId) {
+    // Don't toggle if clicking the play button or a link
+    if (event.target.classList.contains('play-btn') || 
+        event.target.closest('.play-btn') ||
+        event.target.tagName === 'A') {
+        return;
+    }
+
     event.preventDefault();
     event.stopPropagation();
 
@@ -221,7 +228,10 @@ function toggleProjectBreakdown(event, projectId) {
         // Collapse
         projectCard.classList.remove('expanded');
         breakdownDiv.style.display = 'none';
-        button.textContent = 'View Breakdown ↓';
+        const expandBtn = projectCard.querySelector('.expand-btn');
+        if (expandBtn) {
+            expandBtn.textContent = 'View Breakdown ↓';
+        }
     } else {
         // Expand
         // First, close all other expanded projects
@@ -241,7 +251,10 @@ function toggleProjectBreakdown(event, projectId) {
         // Expand this project
         projectCard.classList.add('expanded');
         breakdownDiv.style.display = 'block';
-        button.textContent = 'Hide Breakdown ↑';
+        const expandBtn = projectCard.querySelector('.expand-btn');
+        if (expandBtn) {
+            expandBtn.textContent = 'Hide Breakdown ↑';
+        }
 
         // Scroll to the expanded card
         setTimeout(() => {
