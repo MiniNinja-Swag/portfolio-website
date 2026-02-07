@@ -7,12 +7,13 @@
 :root {
     --primary-color: #0f0a1f;
     --secondary-color: #1a0f3a;
-    --accent-color: #46d1ff;
+    --accent-color: #00b7ff;
+    --accent-blue: #0026ff;
     --accent-purple: #b800e6;
     --text-color: #ffffff;
     --bg-color: #0f0a1f;
     --bg-secondary: #1a1535;
-    --border-color: #2dcaff;
+    --border-color: #00b7ff;
     --glass-bg: rgba(255, 255, 255, 0.05);
     --glass-border: rgba(255, 255, 255, 0.1);
     --spacing-unit: 1rem;
@@ -947,11 +948,12 @@ section:nth-child(even) {
 
 .play-btn {
     background-color: var(--primary-color);
-    border: 1px solid var(--accent-color);
+    color: var(--accent-purple);
+    border: 1px solid var(--accent-purple);
 }
 
 .play-btn:hover {
-    background-color: var(--accent-color);
+    background-color: var(--accent-purple);
     color: var(--primary-color);
 }
 
@@ -1157,7 +1159,7 @@ section:nth-child(even) {
 }
 
 .case-study-header {
-    border-bottom: 2px solid var(--border-color);
+    border-bottom: 2px solid var(--accent-purple);
     padding-bottom: 1.5rem;
     margin-bottom: 2rem;
 }
@@ -1168,7 +1170,7 @@ section:nth-child(even) {
 }
 
 .case-study-header .role {
-    color: var(--accent-color);
+    color: var(--accent-purple);
     font-weight: 600;
     font-size: 1rem;
 }
@@ -1600,6 +1602,16 @@ section:nth-child(even) {
         min-height: auto;
     }
 
+    .hero-content {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+
+    .hero-gif-wrapper {
+        margin: 0 auto;
+        width: 100%;
+    }
+
     .hero-title {
         font-size: 4rem;
         display: none;
@@ -1743,6 +1755,11 @@ section:nth-child(even) {
     .image-grid-2,
     .image-grid-3 {
         grid-template-columns: 1fr;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
     /* ==========================================
@@ -1997,6 +2014,22 @@ section:nth-child(even) {
             gap: 2rem;
         }
 
+        .about-text {
+            margin-right: 0;
+            padding: 1.5rem;
+            width: 100%;
+        }
+
+        .about-image {
+            margin-bottom: -35px;
+            margin-right: 0;
+        }
+
+        .profile-img {
+            max-width: 100%;
+            width: 100%;
+        }
+
         .project-breakdown-page {
             padding: 2rem 0;
         }
@@ -2048,3 +2081,5 @@ section:nth-child(even) {
             text-decoration: underline;
         }
     }
+
+}
